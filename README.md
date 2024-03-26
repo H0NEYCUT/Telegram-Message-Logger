@@ -1,6 +1,6 @@
 # Telegram Message Logger
 
-This Python script allows you to log incoming and outgoing messages from your Telegram account to text files. It differentiates messages using user IDs and saves media files to a separate directory while adding references to them in the log files.
+This Python script allows you to log incoming and outgoing messages from your Telegram account to text files. It differentiates messages using user IDs and saves media files to a separate directory while adding references to them in the log files. You can view the logs at http://127.0.0.1:5000. Here the logs are in HTML, with media embeds.
 
 ## Getting Started
 
@@ -40,6 +40,12 @@ Before running the script, you need to install the following dependencies:
 
 - `logger.py`: The main Python script for logging messages.
 - `.env`: Configuration file to store your Telegram API ID and API hash.
+
+## Demo
+
+You can watch the demo of the logger here:
+
+[![Demo Video](https://spinherder.blob.core.windows.net/ghub/thumbnail.png)](https://spinherder.blob.core.windows.net/ghub/logger.mp4 "Demo")
 
 ## Contributing
 

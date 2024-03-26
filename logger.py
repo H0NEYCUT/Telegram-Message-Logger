@@ -46,7 +46,7 @@ def send_media(path):
     return send_from_directory(MEDIA_DIRECTORY, path)
 
 def run_flask():
-    app.run(host='0.0.0.0', port=5000)
+    app.run(port=5000) # To open the logger up to public, change this line to the following: app.run(host='0.0.0.0', port=5000)
 
 # Start Flask in a new thread
 flask_thread = Thread(target=run_flask)
