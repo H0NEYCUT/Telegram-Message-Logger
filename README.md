@@ -31,7 +31,7 @@ Before running the script, you need to install the following dependencies:
 3. Run the script:
 
    ```bash
-   python telegram_message_logger.py
+   python logger.py
    ```
 
 4. The script will start logging incoming and outgoing messages to the `logs/` directory and save media files to the `media/` directory.
