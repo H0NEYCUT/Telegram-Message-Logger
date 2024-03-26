@@ -31,7 +31,7 @@ Before running the script, you need to install the following dependencies:
 3. Run the script:
 
    ```bash
-   python logger.py
+   python3 logger.py
    ```
 
 4. The script will start logging incoming and outgoing messages to the `logs/` directory and save media files to the `media/` directory.
