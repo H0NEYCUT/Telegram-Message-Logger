@@ -11,6 +11,7 @@ Before running the script, you need to install the following dependencies:
 - Python 3
 - Telethon library (`pip install telethon`)
 - Python-dotenv library (`pip install python-dotenv`)
+- Flask library (`pip install flask`)
 
 ### Usage
 
