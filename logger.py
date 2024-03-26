@@ -1,4 +1,5 @@
 from flask import Flask, send_from_directory, render_template
+from markupsafe import Markup
 from threading import Thread
 from telethon import TelegramClient, events
 from dotenv import load_dotenv
@@ -32,10 +33,16 @@ def index():
 
 @app.route('/logs/<path:path>')
 def send_log(path):
-    return send_from_directory(LOGS_DIRECTORY, path)
+    with open(os.path.join(LOGS_DIRECTORY, path), 'r') as f:
+        content = Markup(f.read())
+    return render_template('log.html', content=content)
+
+@app.route('/media/<path:path>')
+def send_media(path):
+    return send_from_directory(MEDIA_DIRECTORY, path)
 
 def run_flask():
-    app.run(host='0.0.0.0', port=5000) # use app.run(port=5000) if you don't want to only be able to visit on your local machine.
+    app.run(host='0.0.0.0', port=5000)
 
 # Start Flask in a new thread
 flask_thread = Thread(target=run_flask)
@@ -63,9 +70,10 @@ async def handle_incoming(event):
     with open(log_filename, "a") as file:
         if message.media:
             media = await message.download_media(file=media_dir)
-            file.write(f"<{sender_id}>: {message.message} (Media saved to {media})\n")
+            media_path = os.path.join('media', str(chat_id), os.path.basename(media))
+            file.write(f"<p><b><u>{sender_id}</u></b>: {message.message} <a href='{media_path}'>View Media</a></p>\n")
         else:
-            file.write(f"<{sender_id}>: {message.message}\n")
-
+            file.write(f"<p><b><u>{sender_id}</u></b>: {message.message}</p>\n")
+            
 if __name__ == '__main__':
     client.loop.run_until_complete(main())
