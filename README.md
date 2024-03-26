@@ -45,7 +45,9 @@ Before running the script, you need to install the following dependencies:
 
 You can watch the demo of the logger here:
 
-[![Demo Video](https://spinherder.blob.core.windows.net/ghub/thumbnail.png)](https://spinherder.blob.core.windows.net/ghub/logger.mp4 "Demo")
+
+https://github.com/H0NEYCUT/Telegram-Message-Logger/assets/73757972/f3cecbba-ee57-4243-a840-e5a58fd4fa4c
+
 
 ## Contributing
 
