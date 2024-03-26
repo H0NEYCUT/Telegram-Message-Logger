@@ -35,6 +35,7 @@ Before running the script, you need to install the following dependencies:
    ```
 
 4. The script will start logging incoming and outgoing messages to the `logs/` directory and save media files to the `media/` directory.
+   There's a webUI running at http://127.0.0.1:5000. 
 
 ## Configuration
 
